@@ -1,4 +1,4 @@
 gunicorn
-flask
+flask==2.1.2
 pytz
 uvicorn

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Global Clock</title>
+  </head>
+  <body>
+    <h1>Current Time:</h1>
+    <p id="currentTime"></p>
+    <hr/>
+    <h2>Cities:</h2>
+    <ul id="cities">
+      {% for city in cities %}
+        <li><strong>{{city.name}}</strong>: {{city[city.name]}}</li>
+      {% endfor %}
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        setInterval(function() {
+          $("#currentTime").text(moment().format("HH:mm:ss"));
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
