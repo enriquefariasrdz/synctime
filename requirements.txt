@@ -1,1 +1,4 @@
 gunicorn
+flask
+pytz
+uvicorn
