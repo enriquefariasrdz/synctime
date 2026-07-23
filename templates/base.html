@@ -1,48 +1,16 @@
-from datetime import datetime
-from zoneinfo import ZoneInfo
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SyncTime</title>
 
-CITIES = [
-    {
-        "name": "Mexico City",
-        "timezone": "America/Mexico_City"
-    },
-    {
-        "name": "New York",
-        "timezone": "America/New_York"
-    },
-    {
-        "name": "London",
-        "timezone": "Europe/London"
-    },
-    {
-        "name": "Tokyo",
-        "timezone": "Asia/Tokyo"
-    }
-]
+    <link rel="stylesheet"
+          href="{{ url_for('static',<body>
 
+    {% block content %}
+    {% endblock %}
 
-def get_city_times():
+    {{ url_for('static', filename='js/app.js') }}
 
-    results = []
-
-    for city in CITIES:
-
-        now = datetime.now(ZoneInfo(city["timezone"]))
-
-        timeline = []
-
-        for hour in range(24):
-
-            timeline.append({
-                "hour": hour,
-                "label": f"{hour:02d}"
-            })
-
-        results.append({
-            "city": city["name"],
-            "time": now.strftime("%H:%M"),
-            "date": now.strftime("%a %d %b"),
-            "timeline": timeline
-        })
-
-    return results
+</body>
+</html>
